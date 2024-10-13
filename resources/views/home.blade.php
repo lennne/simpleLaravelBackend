@@ -15,7 +15,7 @@
     
     <div style="border: 3px solid black;"> 
         <h1>POSTS</h1>
-        <form action="/create-post" method="POST">
+        <form action="/post" method="POST">
         @csrf
         <input type="text" name="title" placeholder="post title ">
         <textarea name="body" placeholder="body content...."></textarea>
@@ -27,8 +27,8 @@
         <div style="background-color:grey;">
             <h1>{{$post['title']}} by {{$post->user->name}} at {{$post['created_at']}}</h1>    
             <h3>{{$post['body']}}</h3>
-            <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
-            <form action="/delete-post/{{$post->id}}" method="POST">
+            <p><a href="/post/{{$post->id}}">Edit</a></p>
+            <form action="/post/{{$post->id}}" method="POST">
             @csrf
             @method('DELETE')
             <button>Delete</button>

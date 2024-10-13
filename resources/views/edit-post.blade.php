@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Post</h1>
-    <form action="/edit-post/{{$post->id}}" method="POST">
+    <form action="/post/{{$post->id}}" method="POST">
     @csrf
     @method('PUT')
     <input type="text" name="title" value="{{$post->title}}">
